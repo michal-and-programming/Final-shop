@@ -12,7 +12,7 @@ const Carousel = () => {
   ];
 
   return (
-    <div className="carousel-wrapper">
+    <div className="carouselWrapper">
       <Swiper
         modules={[Autoplay]}
         slidesPerView={1}
@@ -24,7 +24,7 @@ const Carousel = () => {
             <img
               src={src}
               alt='samochód zdalnie sterowany'
-              className="carousel-image"
+              className="carouselImage"
             />
           </SwiperSlide>
         ))}
