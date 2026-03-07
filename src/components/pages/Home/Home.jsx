@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchProductAsync } from "../../../redux/products.actions";
+import { Link } from "react-router-dom";
 import './Home.scss';
 
 const Home = () => {
@@ -17,15 +18,17 @@ const Home = () => {
   return(
     <div className="productsContainer">
       {products.map(p =>
-        <div key = {p.id}>
-          <div className="productImageContainer">
-            <img src={p.images[0]} alt={p.title}></img>
+      <Link key = {p.id} to={`/product/${p.id}`}>
+        <div className="productCard">
+          <div className="productCardImageContainer">
+            <img src={p.images[0]} alt={p.title}/>
           </div>
-          <div>
+          <div className="productCardTextContainer">
             <p>{p.title}</p>
             <p>Cena: {p.price}zł</p>
           </div>
         </div>
+        </Link>
       )}
     </div>
   )

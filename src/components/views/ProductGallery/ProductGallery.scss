@@ -1,0 +1,22 @@
+.activeImageContainer {
+  max-width: 450px;
+  overflow: hidden;
+  aspect-ratio: 1/1;
+  margin-bottom: 10px;
+
+  img{
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.miniImageContainer {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+
+  img{
+    object-fit: cover;
+    max-width: 140px;
+  }
+}

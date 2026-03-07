@@ -2,17 +2,37 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  width: 100%;
+}
+
+.productCard{
+  max-width: 400px;
   margin: 0 auto;
 }
 
-.productImageContainer{
-  width: 400px;
+.productCardImageContainer{
+  width: 100%;
   overflow: hidden;
-  border: 1px solid rgb(152, 75, 75);
+  box-shadow: 10px 15px 7px rgba(0, 0, 0, 0.2);
+  aspect-ratio: 1/1;
+  transition: scale 0.3s;
+  cursor: pointer;
+
+  &:hover{
+    scale: 1.05;
+  }
 
   img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+}
+
+.productCardTextContainer{
+  p{
+    padding-left: 10px;
+    font-size: 17px;
+    margin: 8px 0 6px 0;
   }
 }

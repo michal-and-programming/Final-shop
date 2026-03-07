@@ -1,8 +1,21 @@
+@import '../../../styles/variables.scss';
+
 .carouselWrapper {
   width: 100%;
   border-radius: 10px;
   overflow: hidden;
   height: 400px;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.carouselText{
+  position: absolute;
+  font-size: 30px;
+  top: 7px;
+  left: 10px;
+  z-index: 10;
+  background-color: $color-almostWhite;
 }
 
 .carouselImage {

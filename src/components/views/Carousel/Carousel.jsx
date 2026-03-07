@@ -13,6 +13,7 @@ const Carousel = () => {
 
   return (
     <div className="carouselWrapper">
+      <span className='carouselText'>Sklep FAST CARS</span>
       <Swiper
         modules={[Autoplay]}
         slidesPerView={1}
