@@ -16,9 +16,9 @@ const data = [
     price: 60,
     description: 'Szybki samochód zdalnie sterowany 40KM/H: Ulepszony silnik elektryczny zapewnia mocny napęd dla szybkiego pojazdu, z maksymalną prędkością ponad 40 km/h.',
     images: [
-      'productImages/product2-1.jpg',
-      'productImages/product2-2.jpg',
-      'productImages/product2-3.jpg'
+      '/productImages/product2-1.jpg',
+      '/productImages/product2-2.jpg',
+      '/productImages/product2-3.jpg'
     ]
   },
   {
@@ -26,10 +26,10 @@ const data = [
     title: 'OVERMAX X-Strike',
     price: 30,
     description: 'DOSKONAŁY PREZENT: wykonany w skali 1:16 model X-Strike dostarczy dużo frajdy i adrenaliny zarówno dzieciom jak i dorosłym. Samochód terenowy RC z łatwością poradzi sobie z jazdą po trudniejszych podłożach',
-     images: [
-      'productImages/product3-1.jpg',
-      'productImages/product3-2.jpg',
-      'productImages/product3-3.jpg'
+    images: [
+      '/productImages/product3-1.jpg',
+      '/productImages/product3-2.jpg',
+      '/productImages/product3-3.jpg'
     ]
   },
   {
@@ -37,10 +37,10 @@ const data = [
     title: 'Pojazd Budowlany Dla Dzieci',
     price: 20,
     description: 'Korpus koparki RC na gąsienicach można obracać o 680°. Pozwala to na elastyczne zastosowanie na każdym placu budowy. Tryb automatycznej prezentacji obsługuje przełączniki dźwięku i światła silnika.',
-     images: [
-      'productImages/product4-1.jpg',
-      'productImages/product4-2.jpg',
-      'productImages/product4-3.jpg'
+    images: [
+      '/productImages/product4-1.jpg',
+      '/productImages/product4-2.jpg',
+      '/productImages/product4-3.jpg'
     ]
   },
 ];

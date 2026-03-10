@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { fetchProductAsync } from "../../../redux/products.actions";
+import { fetchProductAsync } from "../../../redux/products/products.actions";
 import { Link } from "react-router-dom";
 import './Home.scss';
 
@@ -25,7 +25,7 @@ const Home = () => {
           </div>
           <div className="productCardTextContainer">
             <p>{p.title}</p>
-            <p>Cena: {p.price}zł</p>
+            <p>Cena:&nbsp;{p.price}zł</p>
           </div>
         </div>
         </Link>

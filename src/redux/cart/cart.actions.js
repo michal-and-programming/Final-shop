@@ -1,0 +1,21 @@
+import { SET_QUANTITY, SET_INFO, ADD_TO_CART, REMOVE } from "./cart.types";
+
+export const addToCart = (id, quantity) => ({
+  type: ADD_TO_CART,
+  payload: {id, quantity}
+});
+
+export const remove = (id) => ({
+  type: REMOVE,
+  payload: id
+})
+
+export const setQuantity = (id, quantity) => ({
+  type: SET_QUANTITY,
+  payload: {id, quantity}
+});
+
+export const setInfo = (id, info) => ({
+  type: SET_INFO,
+  payload: {id, info}
+});

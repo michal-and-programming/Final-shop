@@ -1,9 +1,7 @@
-import { FETCH_PRODUCTS_START, FETCH_PRODUCTS_SUCCESS, FETCH_PRODUCTS_ERROR, SET_QUANTITY, SET_INFO, } from "./products.types";
+import { FETCH_PRODUCTS_START, FETCH_PRODUCTS_SUCCESS, FETCH_PRODUCTS_ERROR } from "./products.types";
 
 const initialState = {
   products: [],
-  info: '',
-  quantity: 1,
   loading: false,
   error: null
 };
@@ -24,16 +22,6 @@ const productsReducer = (state = initialState, action) => {
       return(
         {...state, loading: false, error: action.payload}
       );
-
-    case SET_QUANTITY:
-      return(
-        {...state, quantity: action.payload}
-      );
-
-    case SET_INFO:
-      return(
-        {...state, info: String(action.payload)}
-      )
 
     default:
       return state;
