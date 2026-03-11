@@ -12,40 +12,46 @@ const cartReducer = (state = initialState, action) => {
 
       if(existingProduct){
         return(
-          {cart: state.cart.map(
-            item => item.id === action.payload.id
-            ? {...item, quantity: item.quantity + action.payload.quantity}
-            : item
-          )}
+          {...state,
+            cart: state.cart.map(
+              item => item.id === action.payload.id
+              ? {...item, quantity: item.quantity + action.payload.quantity}
+              : item
+            )
+          }
         )
       }
 
       return(
-        {cart: [...state.cart, action.payload]}
+        {...state, cart: [...state.cart, action.payload]}
       )
     }
 
     case SET_QUANTITY:
       return(
-        {cart: state.cart.map(
-          item => item.id === action.payload.id
-          ? {...item, quantity: action.payload.quantity}
-          : item
-        )}
+        {...state, 
+          cart: state.cart.map(
+            item => item.id === action.payload.id
+            ? {...item, quantity: action.payload.quantity}
+            : item
+          )
+        }
       );
 
     case SET_INFO:
       return(
-        {cart: state.cart.map(
-          item => item.id === action.payload.id
-          ? {...item, info: action.payload.info}
-          : item
-        )}
+        {...state, 
+          cart: state.cart.map(
+            item => item.id === action.payload.id
+            ? {...item, info: action.payload.info}
+            : item
+          )
+        }
       );
 
     case REMOVE:
       return(
-        {cart: state.cart.filter(item => item.id !== action.payload.id)}
+        {...state, cart: state.cart.filter(item => item.id !== action.payload.id)}
       );
 
     default: return state;

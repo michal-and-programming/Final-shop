@@ -1,5 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
+import { FaShoppingCart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import 'swiper/css';
 import './Carousel.scss';
 
@@ -14,6 +16,9 @@ const Carousel = () => {
   return (
     <div className="carouselWrapper">
       <span className='carouselText'>Sklep FAST CARS</span>
+      <Link to={'/cart'}>
+        <span className='carouselCart'>Koszyk<FaShoppingCart /></span>
+      </Link>
       <Swiper
         modules={[Autoplay]}
         slidesPerView={1}

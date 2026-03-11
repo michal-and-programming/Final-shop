@@ -1,8 +1,8 @@
 import { SET_QUANTITY, SET_INFO, ADD_TO_CART, REMOVE } from "./cart.types";
 
-export const addToCart = (id, quantity) => ({
+export const addToCart = (product) => ({
   type: ADD_TO_CART,
-  payload: {id, quantity}
+  payload: product
 });
 
 export const remove = (id) => ({

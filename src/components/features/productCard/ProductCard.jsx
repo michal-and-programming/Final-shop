@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { useParams } from 'react-router-dom';
+import { addToCart } from "../../../redux/cart/cart.actions";
 import ProductGallery from '../../views/ProductGallery/ProductGallery';
 import Button from "../../common/Button/Button";
 import './ProductCard.scss';
@@ -10,9 +11,18 @@ const ProductCard = () => {
   const { id } = useParams();
   const productsData = useSelector(state => state.products.products);
   const product = productsData.find(p => p.id === Number(id));
-  const itemQuantity = useSelector(state => state.products.quantity);
 
-  const [quantityItem, setQuantityItem] = useState(itemQuantity);
+  const [amount, setAmount] = useState(1);
+
+  const handleAdd = () => {
+    dispatch(addToCart({
+      id: Number(id),
+      title: product.title,
+      price: product.price,
+      quantity: Number(amount),
+      image: product.images[0]
+    }))
+  }
 
   if(!product) return <p>Coś poszło nie tak</p>
 
@@ -32,13 +42,13 @@ const ProductCard = () => {
             type="number"
             min="1"
             max="10"
-            value={quantityItem}
-            //onChange={(e) => }
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
             onKeyDown={(e) => e.preventDefault()}
           />
         </div>
         <div className="productButtonContainer">
-          <Button>Dodaj do koszyka</Button>
+          <Button onClick={handleAdd}>Dodaj do koszyka</Button>
         </div>
       </div>
     </div>
