@@ -13,6 +13,7 @@ const ProductCard = () => {
   const product = productsData.find(p => p.id === Number(id));
 
   const [amount, setAmount] = useState(1);
+  const [isAdded, setIsAdded] = useState(false);
 
   const handleAdd = () => {
     dispatch(addToCart({
@@ -22,7 +23,12 @@ const ProductCard = () => {
       quantity: Number(amount),
       image: product.images[0]
     }))
-  }
+    setIsAdded(true);
+
+    setTimeout(() => {
+      setIsAdded(false)
+    },2000);
+  };
 
   if(!product) return <p>Coś poszło nie tak</p>
 
@@ -49,6 +55,7 @@ const ProductCard = () => {
         </div>
         <div className="productButtonContainer">
           <Button onClick={handleAdd}>Dodaj do koszyka</Button>
+          {isAdded && (<span className="added">Dodano do koszyka</span>)}
         </div>
       </div>
     </div>

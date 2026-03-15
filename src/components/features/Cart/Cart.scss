@@ -1,0 +1,91 @@
+.cartProductContainer{
+  display: grid;
+  grid-template-columns: 20% 1fr 25%;
+}
+
+.imageContainer{
+  margin: 0 20px 15px 50px;
+
+  img{
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+}
+
+.contentContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: rgb(255, 255, 255);
+  max-width: 800px;
+  margin-bottom: 15px;
+  padding-left: 30px;
+  height: 225px;
+
+  p{
+    font-size: 25px;
+  }
+}
+
+.quantityContainer{
+  display: flex;
+
+  button{
+    width: 40px;
+    height: 40px;
+    color:rgb(179, 178, 178);
+    background-color: rgb(255, 255, 255);
+    font-size: 30px;
+    border: 1px solid rgb(179, 178, 178);
+  }
+
+  input{
+    width: 80px;
+    height: 40px;
+    text-align: center;
+    font-size: 20px;
+    border: 1px solid rgb(179, 178, 178);
+  }
+}
+
+.formContainer{
+  form{
+    display:flex ;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  textarea{
+    height: 150px;
+    max-height: 225px;
+    width: 100%;
+    resize: vertical;
+  }
+
+  button{
+    max-width: 100px;
+  }
+}
+
+.summaryContainer{
+  font-size: 40px;
+  display: flex;
+  gap: 40px;
+  justify-content: space-around;
+
+  button{
+    padding: 10px;
+    font-size: 20px;
+    background-color: rgb(255, 102, 36);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover{
+      background-color: rgb(255, 255, 255);
+      border: 1px solid rgb(255, 102, 36);
+    }
+  }
+}

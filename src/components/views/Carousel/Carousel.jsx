@@ -15,7 +15,7 @@ const Carousel = () => {
 
   return (
     <div className="carouselWrapper">
-      <span className='carouselText'>Sklep FAST CARS</span>
+        <span className='carouselText'>Sklep FAST CARS</span>
       <Link to={'/cart'}>
         <span className='carouselCart'>Koszyk<FaShoppingCart /></span>
       </Link>

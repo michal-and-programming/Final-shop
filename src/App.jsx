@@ -5,6 +5,7 @@ import NoMatch from "./components/views/NoMatch/NoMatch";
 import Footer from "./components/views/Footer/Footer";
 import ProductCard from "./components/features/ProductCard/ProductCard";
 import Cart from "./components/features/Cart/Cart";
+import Summary from "./components/views/Summary/Summary";
 import "./styles/appWrapper/appWrapper.scss";
 
 const App = () => {
@@ -14,8 +15,9 @@ const App = () => {
       <Carousel />
       <Routes>
         <Route path="/" element={<Home />}/>
-        <Route path="/product/:id" element={<ProductCard/>} />
+        <Route path="/product/:id" element={<ProductCard/>}/>
         <Route path="/cart" element={<Cart />}/>
+        <Route path="/summary" element={<Summary />}/>
         <Route path="*" element={<NoMatch />}/>
       </Routes>
       <Footer />
