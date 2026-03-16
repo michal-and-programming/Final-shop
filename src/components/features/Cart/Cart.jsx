@@ -3,11 +3,20 @@ import { Link } from "react-router-dom";
 import Button from '../../common/Button/Button';
 import { useState } from "react";
 import { setInfo } from "../../../redux/cart/cart.actions";
+import { setQuantity } from "../../../redux/cart/cart.actions";
 import './Cart.scss';
 
 const Cart = () => {
   const dispatch = useDispatch();
   const cartProducts = useSelector(state => state.cart.cart);
+
+  const changeQty = (id, currentQty, adjustment) => {
+  const newQty = currentQty + adjustment;
+
+  if (newQty >= 1 && newQty <= 10) {
+    dispatch(setQuantity(id, newQty));
+  }
+};
   const total = cartProducts.reduce((acc, p) => {
     return acc + (p.quantity * p.price)
   }, 0);
@@ -34,15 +43,13 @@ const Cart = () => {
             <p>{p.title}</p>
             <p>Cena:&nbsp;{p.price}</p>
             <div className="quantityContainer">
-              <button>+</button>
+              <button onClick={() => changeQty(p.id, p.quantity, 1)}>+</button>
               <input
                 type="number"
-                min="1"
-                max="10"
+                readOnly
                 value={p.quantity}
-                onKeyDown={(e) => e.preventDefault()}
               />
-              <button>-</button>
+              <button onClick={() => changeQty(p.id, p.quantity, -1)}>-</button>
             </div>
             <p>Suma:&nbsp;{p.quantity * p.price}zł</p>
           </div>

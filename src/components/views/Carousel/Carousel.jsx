@@ -16,9 +16,14 @@ const Carousel = () => {
   return (
     <div className="carouselWrapper">
         <span className='carouselText'>Sklep FAST CARS</span>
-      <Link to={'/cart'}>
-        <span className='carouselCart'>Koszyk<FaShoppingCart /></span>
-      </Link>
+        <div className='carouselCart'>
+          <Link to={'/'}>
+            <span>Strona Główna</span>
+          </Link>
+          <Link to={'/cart'}>
+            <span>Koszyk<FaShoppingCart /></span>
+          </Link>
+        </div>
       <Swiper
         modules={[Autoplay]}
         slidesPerView={1}

@@ -23,9 +23,13 @@
   top: 7px;
   right: 30px;
   z-index: 10;
-  color: $color-almostWhite;
   font-size: 20px;
-  cursor: pointer;
+  
+  span{
+    cursor: pointer;
+    color: $color-almostWhite;
+    padding-right: 10px;
+  }
 }
 
 .carouselImage {
