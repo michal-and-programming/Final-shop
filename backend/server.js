@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import connectToDB from "./db.js";
 import productRoutes from "./routes/product.routes.js";
+import orderRoutes from "./routes/order.routes.js";
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/products", productRoutes);
+app.use("/api/orders", orderRoutes);
 
 app.listen(PORT, () => {
   console.log(`Serwer działa na http://localhost:${PORT}`);

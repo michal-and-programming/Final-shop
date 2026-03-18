@@ -10,14 +10,14 @@ const ProductCard = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const productsData = useSelector(state => state.products.products);
-  const product = productsData.find(p => p.id === Number(id));
+  const product = productsData.find(p => p._id === id);
 
   const [amount, setAmount] = useState(1);
   const [isAdded, setIsAdded] = useState(false);
 
   const handleAdd = () => {
     dispatch(addToCart({
-      id: Number(id),
+      id: product._id,
       title: product.title,
       price: product.price,
       quantity: Number(amount),

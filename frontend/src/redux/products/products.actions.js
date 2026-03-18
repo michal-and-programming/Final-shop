@@ -1,5 +1,4 @@
 import { FETCH_PRODUCTS_START, FETCH_PRODUCTS_SUCCESS, FETCH_PRODUCTS_ERROR } from "./products.types";
-import data from '../../data';
 
 export const fetchProductsStart = () => ({
   type: FETCH_PRODUCTS_START
@@ -21,10 +20,18 @@ export const fetchProductAsync = () => {
     dispatch(fetchProductsStart());
 
     try{
-      await dispatch(fetchProductsSuccess(data));
+     const response = await fetch("http://localhost:5000/api/products");
+
+     if(!response.ok) {
+      throw new Error("Błąd pobierania danych");
+     }
+
+     const data = await response.json();
+
+     dispatch(fetchProductsSuccess(data))
 
     }catch(err){
-      dispatch(fetchProductsError(err.message));
+      dispatch(fetchProductsError(err))
     }
   }
 }

@@ -18,7 +18,7 @@ const Home = () => {
   return(
     <div className="productsContainer">
       {products.map(p =>
-      <Link key = {p.id} to={`/product/${p.id}`}>
+      <Link key = {p._id} to={`/product/${p._id}`}>
         <div className="productCard">
           <div className="productCardImageContainer">
             <img src={p.images[0]} alt={p.title}/>

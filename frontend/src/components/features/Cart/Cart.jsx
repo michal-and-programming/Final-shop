@@ -11,12 +11,12 @@ const Cart = () => {
   const cartProducts = useSelector(state => state.cart.cart);
 
   const changeQty = (id, currentQty, adjustment) => {
-  const newQty = currentQty + adjustment;
+    const newQty = currentQty + adjustment;
 
-  if (newQty >= 1 && newQty <= 10) {
-    dispatch(setQuantity(id, newQty));
-  }
-};
+    if (newQty >= 1 && newQty <= 10) {
+      dispatch(setQuantity(id, newQty));
+    }
+  };
   const total = cartProducts.reduce((acc, p) => {
     return acc + (p.quantity * p.price)
   }, 0);
