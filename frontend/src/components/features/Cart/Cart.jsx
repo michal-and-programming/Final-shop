@@ -59,8 +59,9 @@ const Cart = () => {
                 placeholder="Napisz informację do zamówienia"
                 value={text[p.id]}
                 onChange={(e) => handleTextChange(p.id, e.target.value)}
+                maxLength={200}
               ></textarea>
-              <Button type="submit">Dodaj informację</Button>
+              <Button type="submit" disabled={!text[p.id]?.trim()}>Dodaj informację</Button>
             </form>
           </div>
         </div>
