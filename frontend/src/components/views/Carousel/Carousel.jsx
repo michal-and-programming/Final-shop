@@ -7,10 +7,10 @@ import './Carousel.scss';
 
 const Carousel = () => {
   const images = [
-    'http://localhost:5000/carouselImages/doungtepro-off-road-vehicles-6018152_1920.jpg',
-    'http://localhost:5000/carouselImages/alekseiap199232-off-road-outlaw-5063678_1920.jpg',
-    'http://localhost:5000/carouselImages/alekseiap199232-mst-3911899_1920.jpg',
-    'http://localhost:5000/carouselImages/jamorealmedia-caterpillar-4374222_1920.jpg'
+    "/images/carouselImages/doungtepro-off-road-vehicles-6018152_1920.jpg",
+    "/images/carouselImages/alekseiap199232-off-road-outlaw-5063678_1920.jpg",
+    "/images/carouselImages/alekseiap199232-mst-3911899_1920.jpg",
+    "/images/carouselImages/jamorealmedia-caterpillar-4374222_1920.jpg"
   ];
 
   return (

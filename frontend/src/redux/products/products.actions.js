@@ -20,7 +20,7 @@ export const fetchProductAsync = () => {
     dispatch(fetchProductsStart());
 
     try{
-     const response = await fetch("http://localhost:5000/api/products");
+      const response = await fetch("/api/products");
 
      if(!response.ok) {
       throw new Error("Błąd pobierania danych");

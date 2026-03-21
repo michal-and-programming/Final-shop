@@ -74,7 +74,7 @@ const cartReducer = (state = initialState, action) => {
     saveCartToStorage(updatedCart);
 
     return( 
-      {...state, ncart: updatedCart}
+      {...state, cart: updatedCart}
     )
   }
 
