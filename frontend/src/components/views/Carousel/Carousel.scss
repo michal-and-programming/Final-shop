@@ -18,6 +18,12 @@
   background-color: $color-almostWhite;
 }
 
+@media (max-width: 768px) {
+  .carouselText {
+    font-size: 15px;
+  }
+}
+
 .carouselCart{
   position: absolute;
   top: 7px;
@@ -29,6 +35,13 @@
     cursor: pointer;
     color: $color-almostWhite;
     padding-right: 10px;
+  }
+}
+
+@media(max-width: 768px) {
+  .carouselCart {
+    font-size: 10px;
+    right: 10px;
   }
 }
 
