@@ -1,0 +1,86 @@
+# Final Shop – Project Documentation
+
+## 1. Project Goal
+
+Final Shop is a full-stack online shop application.
+
+It allows the user to:
+- browse a list of products,
+- open product details,
+- add products to the cart,
+- change quantity in the cart,
+- add extra notes to each cart item,
+- complete an order by filling shipping data.
+
+The frontend is built with React + Vite, and the backend is built with Node.js + Express + MongoDB.
+
+---
+
+## 2. How to Run the Project (First Time, Step by Step)
+
+### Step 1: Install requirements
+Make sure you have installed:
+- Node.js (recommended LTS version),
+- npm,
+- MongoDB database (local or cloud, for example MongoDB Atlas).
+
+### Step 2: Clone the repository
+```bash
+git clone <repository-url>
+cd Final-shop
+```
+
+### Step 3: Configure backend environment
+Create a file:
+```bash
+backend/.env
+```
+Add at least:
+```env
+MONGO_URI=your_mongodb_connection_string
+PORT=5000
+```
+
+### Step 4: Install backend dependencies
+```bash
+cd backend
+npm install
+```
+
+### Step 5: Install frontend dependencies
+```bash
+cd ../frontend
+npm install
+```
+
+### Step 6: Build frontend files
+The backend serves static files from `frontend/dist`, so build frontend first:
+```bash
+npm run build
+```
+
+### Step 7: Start backend server
+```bash
+cd ../backend
+npm run start
+```
+
+### Step 8: Open the app in browser
+Open:
+```text
+http://localhost:5000
+```
+
+---
+
+## 3. Additional Technical Information
+
+- Backend entry point: `backend/server.js`.
+- Database connection logic: `backend/db.js` (uses `MONGO_URI`).
+- API routes:
+  - `GET /api/products` – get products,
+  - `POST /api/orders` – create order.
+- Static images are served from: `backend/public/images`.
+- Frontend production build is served by Express from: `frontend/dist`.
+- Cart state management is implemented with Redux.
+- In cart quantity is limited from **1** to **10** per product.
