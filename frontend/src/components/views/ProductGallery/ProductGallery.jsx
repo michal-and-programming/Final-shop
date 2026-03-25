@@ -2,7 +2,9 @@ import { useState } from "react";
 import './ProductGallery.scss';
 
 const ProductGallery = ({images, title}) => {
-  const [activeImage, setActiveImage] = useState(images[0]);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const activeImage = images[activeIndex];
 
   return(
     <div>
@@ -11,7 +13,7 @@ const ProductGallery = ({images, title}) => {
         </div>
         <div className="miniImageContainer">
           {images.map((img, index) => 
-            <img src={img} key={index} alt={title} onClick={() => setActiveImage(img)}/>
+            <img src={img} key={index} alt={title} onClick={() => setActiveIndex(index)}/>
           )}
         </div>
     </div>
